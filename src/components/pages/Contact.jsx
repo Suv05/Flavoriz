@@ -1,6 +1,11 @@
-import React from 'react';
+import { useNavigate } from "react-router-dom";
 
 function Contact() {
+  const navigate = useNavigate();
+
+  const handelSubmit = () => {
+    navigate("/");
+  };
   return (
     <div className="flex flex-col items-center justify-center bg-gray-100 py-10">
       <div className="max-w-6xl w-full bg-white rounded-lg shadow-md overflow-hidden">
@@ -10,7 +15,10 @@ function Contact() {
               Get in Touch <span className="text-orange">with Us</span>
             </h2>
             <p className="mb-5">
-              Connect with culinary excellence effortlessly. Whether you have a burning question about a recipe or want to share your cooking triumphs, our dedicated team is just a message away for our food-loving community.
+              Connect with culinary excellence effortlessly. Whether you have a
+              burning question about a recipe or want to share your cooking
+              triumphs, our dedicated team is just a message away for our
+              food-loving community.
             </p>
             <div className="flex flex-col space-y-3">
               <div className="flex items-center space-x-3">
@@ -23,7 +31,9 @@ function Contact() {
               </div>
               <div className="flex items-center space-x-3">
                 <span className="font-semibold">Location:</span>
-                <span>123 Culinary Street, Foodieville, Any State CO 12345</span>
+                <span>
+                  123 Culinary Street, Foodieville, Any State CO 12345
+                </span>
               </div>
             </div>
           </div>
@@ -69,12 +79,14 @@ function Contact() {
           <div className="flex items-center space-x-2">
             <input type="checkbox" id="consent" />
             <label htmlFor="consent" className="text-sm">
-              By filling this form, I hereby consent to be sent a monthly newsletter from Craftly with my email address.
+              By filling this form, I hereby consent to be sent a monthly
+              newsletter from Craftly with my email address.
             </label>
           </div>
           <button
             type="submit"
             className="px-5 py-3 bg-orange text-white font-semibold rounded-md hover:bg-orange"
+            onClick={handelSubmit}
           >
             Submit Message
           </button>
