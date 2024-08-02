@@ -10,6 +10,7 @@ import { Provider } from "react-redux";
 import store from "./Redux Store/store";
 import "./index.css";
 import Spinner from "./components/pages/Spinner";
+import NotFound from "./components/pages/NotFound";
 import App from "./components/routes/App";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
@@ -46,6 +47,7 @@ import Broken from "./components/pages/Broken";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />} errorElement={<Broken />}>
+      <Route path="*" element={<NotFound />} />
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
