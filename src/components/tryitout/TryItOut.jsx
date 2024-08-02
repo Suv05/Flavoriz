@@ -90,6 +90,7 @@ function TryItOut() {
 
   const { data } = useLoaderData();
   const location = useLocation();
+  const [showErr, setShowErr] = useState(true);
 
   const [active, setActive] = useState("");
   const {
@@ -118,19 +119,27 @@ function TryItOut() {
     }
   };
 
+  const handleCloseError = () => {
+    setShowErr(false);
+  };
+
   return (
     <>
       <div className="flex justify-center items-center mb-4">
         <div className="flex mt-2 mb-3">
           <form onSubmit={handleSubmit(onSubmit)} className="relative">
-            {errors.recipe && (
+            {errors.recipe && showErr && (
               <div className="absolute top-[-3rem] left-0 flex items-center justify-center w-full">
                 <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded-md w-96 flex items-center">
                   <p className="flex-grow">
                     <strong className="font-bold">Error:</strong> This field is
                     required
                   </p>
-                  <button className="ml-2">
+                  <button
+                    className="ml-2"
+                    type="button"
+                    onClick={handleCloseError}
+                  >
                     <IoMdClose size={18} />
                   </button>
                 </div>
@@ -163,7 +172,7 @@ function TryItOut() {
             to={`?tags=${i}`}
             key={i}
             onClick={() => handelOnClick(i)}
-            state={{type:i}}
+            state={{ type: i }}
           >
             <p
               className={`px-4 py-2 rounded-full border-2 border-orange whitespace-nowrap ${

@@ -26,10 +26,10 @@ function Broken() {
           <h2 className="mt-4 text-2xl font-bold text-gray-800">
             Something went wrong!
           </h2>
-          <p className="mt-2 text-gray-600 text-center">
+          {/* <p className="mt-2 text-gray-600 text-center">
             {error?.message ||
               "An unexpected error occurred. Please try again later."}
-          </p>
+          </p> */}
           <button
             className="mt-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
             onClick={() => window.location.reload()}
