@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #fffefc;
+}
+
+.myImg {
+  background-image: url("./assets/home.png");
+  background-size: cover; /* Make sure the image covers the entire area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  /*height: 100vh; Ensure the div has height */
+  width: 100%; /* Ensure the div spans the full width */
+}
+.mybox {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.myfoodImg {
+  background-image:url("./assets/top-view-delicious-meat-table.jpg");
+  background-size: cover; /* Make sure the image covers the entire area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  /*height: 100vh; Ensure the div has height */
+  width: 100%; /* Ensure the div spans the full width */
+}
+.myDetailsImg {
+  background-image:url("./assets/details.jpg");
+  background-size: cover; /* Make sure the image covers the entire area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  /*height: 100vh; Ensure the div has height */
+  width: 100%; /* Ensure the div spans the full width */
+}
+.myrecipeImg {
+  background-image:url("./assets/mexican-dishes-pepper.jpg");
+  background-size: cover; /* Make sure the image covers the entire area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  /*height: 100vh; Ensure the div has height */
+  width: 100%; /* Ensure the div spans the full width */
+}
+
+.recipebox{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.itembox{
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.instructionbox{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+/* check box styled */
+.custom-checkbox {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+.custom-checkbox:checked {
+  background-color: #fda218; /* Tailwind's orange-500 color */
+  border: 2px solid #fda218;
+}
+
+.custom-checkbox:checked::after {
+  content: '✔️';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: #fff;
+}
